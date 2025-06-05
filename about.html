@@ -121,6 +121,63 @@
       background: var(--light-green);
       color: var(--white);
     }
+	.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 200;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.hamburger, .hamburger::before, .hamburger::after {
+  content: '';
+  display: block;
+  background: var(--primary-green);
+  height: 4px;
+  border-radius: 2px;
+  width: 28px;
+  position: absolute;
+  left: 6px;
+  transition: all 0.3s;
+}
+
+.hamburger {
+  top: 18px;
+}
+
+.hamburger::before {
+  top: 8px;
+}
+
+.hamburger::after {
+  top: -8px;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--white);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    box-shadow: 0 8px 24px var(--shadow);
+    z-index: 150;
+    padding: 1rem 0;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+}
+
+	
 
     /* Page Header */
     .page-header {
@@ -426,6 +483,10 @@
 
   <nav>
     <div class="nav-container">
+	<button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+  <span class="hamburger"></span>
+</button>
+
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" class="active">About Us</a></li>
@@ -527,5 +588,16 @@
       </div>
     </div>
   </footer>
+  <script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  navToggle.addEventListener('click', function () {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !expanded);
+    navLinks.classList.toggle('open');
+  });
+</script>
+
 </body>
 </html>
