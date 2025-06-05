@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matlala Farming - Rooted in Nature, Growing the Future</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-green: #2d5016;
+      --accent-green: #4a7c59;
+      --light-green: #8fbc8f;
+      --warm-cream: #faf7f2;
+      --earth-brown: #8b4513;
+      --soft-gray: #6b7280;
+      --white: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--soft-gray);
+      background-color: var(--warm-cream);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%);
+      padding: 1rem 2rem;
+      position: relative;
+      box-shadow: 0 4px 20px var(--shadow);
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      background: var(--warm-cream);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--primary-green);
+      font-weight: bold;
+    }
+
+    .brand-text h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--white);
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .brand-text p {
+      color: var(--light-green);
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--white);
+      box-shadow: 0 2px 10px var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary-green);
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      background: var(--primary-green);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .nav-links a.active {
+      background: var(--light-green);
+      color: var(--white);
+    }
+
+	/*Hero Section*/
+  .hero {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+ .hero-pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 2rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--white);
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    .hero p {
+      color: var(--warm-cream);
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      font-weight: 300;
+      animation: fadeInUp 1.2s ease-out 0.3s both;
+    }
+	
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+ .cta-button {
+      display: inline-block;
+      background: var(--earth-brown);
+      color: var(--white);
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      animation: fadeInUp 1.2s ease-out 0.6s both;
+      box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+    }
+
+    .cta-button:hover {
+      background: #a0522d;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(139, 69, 19, 0.4);
+    }
+
+
+    /* Intro Section */
+    .intro-section {
+      padding: 5rem 2rem;
+      background: var(--white);
+      text-align: center;
+    }
+
+    .intro-content {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .intro-section h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-green);
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+
+    .intro-section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      color: var(--soft-gray);
+    }
+
+    /* Features Grid */
+    .features {
+      padding: 5rem 2rem;
+      background: var(--warm-cream);
+    }
+
+    .features-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-green);
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      font-weight: 700;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .feature-card {
+      background: var(--white);
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-green), var(--accent-green));
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--light-green), var(--accent-green));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2rem;
+      color: var(--white);
+    }
+
+    .feature-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-green);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .feature-card p {
+      color: var(--soft-gray);
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary-green);
+      color: var(--white);
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--light-green);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--accent-green);
+      padding-top: 2rem;
+      color: var(--light-green);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .brand-text h1 {
+        font-size: 1.5rem;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+
+      .nav-container {
+        padding: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .intro-section, .features {
+        padding: 3rem 1rem;
+      }
+
+      .intro-section h2, .features h2 {
+        font-size: 2rem;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .feature-card {
+        padding: 2rem;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        height: 70vh;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo-section">
+        <div class="logo">MF</div>
+        <div class="brand-text">
+          <h1>Matlala Farming</h1>
+          <p>Vegetables & Poultry Production</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-container">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="produce.html">Our Produce</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<section class="hero">
+  <video autoplay muted loop playsinline class="hero-background-video">
+    <source src="images/matlala farms.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="hero-pattern"></div>
+
+  <div class="hero-content">
+    <h1>Rooted in Nature, Growing the Future</h1>
+    <p>Experience the warmth of Matlala Farming with fresh vegetables and quality poultry, sustainably grown in the heart of Gauteng</p>
+    <a href="about.html" class="cta-button">Discover Our Story</a>
+  </div>
+</section>
+
+
+  <section class="intro-section">
+    <div class="intro-content">
+      <h2>Welcome to Matlala Farming</h2>
+      <p>At Matlala Farming, we believe that the best food comes from the heart. Our family has been nurturing the rich soil of Gauteng for generations, growing fresh vegetables and raising healthy poultry with love, care, and respect for the land that sustains us all.</p>
+      <p>Every seed we plant and every chicken we raise carries our commitment to quality, sustainability, and the well-being of our community. We invite you to taste the difference that comes from farming with passion and purpose.</p>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="features-container">
+      <h2>What Makes Us Special</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🌱</div>
+          <h3>Sustainable Farming</h3>
+          <p>We practice environmentally responsible farming methods that preserve our land for future generations while producing the healthiest crops possible.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👨‍👩‍👧‍👦</div>
+          <h3>Family Tradition</h3>
+          <p>Our farming techniques have been passed down through generations, combining traditional wisdom with modern sustainable practices.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🥬</div>
+          <h3>Fresh Quality</h3>
+          <p>From our fields to your table, we ensure the freshest vegetables and finest poultry through careful cultivation and humane practices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="about.html">About Us</a>
+        <a href="produce.html">Our Produce</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Matlala Farming. All rights reserved. | Limpopo, South Africa</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

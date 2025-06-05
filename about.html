@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Matlala Farming</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-green: #2d5016;
+      --accent-green: #4a7c59;
+      --light-green: #8fbc8f;
+      --warm-cream: #faf7f2;
+      --earth-brown: #8b4513;
+      --soft-gray: #6b7280;
+      --white: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--soft-gray);
+      background-color: var(--warm-cream);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%);
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 20px var(--shadow);
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      background: var(--warm-cream);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--primary-green);
+      font-weight: bold;
+    }
+
+    .brand-text h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--white);
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .brand-text p {
+      color: var(--light-green);
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--white);
+      box-shadow: 0 2px 10px var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary-green);
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background: var(--primary-green);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .nav-links a.active {
+      background: var(--light-green);
+      color: var(--white);
+    }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(135deg, var(--accent-green) 0%, var(--light-green) 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .page-header p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--warm-cream);
+    }
+
+    /* Main Content */
+    .main-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .story-section {
+      background: var(--white);
+      padding: 4rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px var(--shadow);
+      margin-bottom: 3rem;
+    }
+
+    .story-section h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-green);
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .story-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    .story-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      color: var(--soft-gray);
+    }
+
+    .story-image {
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(45deg, var(--light-green), var(--accent-green));
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1.2rem;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    /* Values Section */
+    .values-section {
+      margin: 5rem 0;
+    }
+
+    .values-section h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-green);
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .value-card {
+      background: var(--white);
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px var(--shadow);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .value-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--earth-brown), #a0522d);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2rem;
+      color: var(--white);
+    }
+
+    .value-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-green);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .value-card p {
+      color: var(--soft-gray);
+      line-height: 1.7;
+    }
+
+    /* Team Section */
+    .team-section {
+      background: var(--white);
+      padding: 4rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px var(--shadow);
+      margin: 3rem 0;
+    }
+
+    .team-section h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-green);
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .team-intro {
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+      color: var(--soft-gray);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .family-values {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .family-value {
+      text-align: center;
+      padding: 2rem;
+      border-radius: 15px;
+      background: var(--warm-cream);
+    }
+
+    .family-value h4 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-green);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .family-value p {
+      color: var(--soft-gray);
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary-green);
+      color: var(--white);
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--light-green);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--accent-green);
+      padding-top: 2rem;
+      color: var(--light-green);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .brand-text h1 {
+        font-size: 1.5rem;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+
+      .nav-container {
+        padding: 1rem;
+      }
+
+      .page-header h1 {
+        font-size: 2.5rem;
+      }
+
+      .page-header p {
+        font-size: 1rem;
+      }
+
+      .main-content {
+        padding: 3rem 1rem;
+      }
+
+      .story-section {
+        padding: 2rem;
+      }
+
+      .story-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .story-section h2, .values-section h2, .team-section h2 {
+        font-size: 2rem;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .team-section {
+        padding: 2rem;
+      }
+
+      .family-values {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo-section">
+        <div class="logo">MF</div>
+        <div class="brand-text">
+          <h1>Matlala Farming</h1>
+          <p>Vegetables & Poultry Production</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-container">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+        <li><a href="produce.html">Our Produce</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <h1>Our Story</h1>
+    <p>Discover the heart and soul behind Matlala Farming - a family legacy rooted in love for the land</p>
+  </section>
+
+  <main class="main-content">
+    <section class="story-section">
+      <h2>From Humble Beginnings</h2>
+      <div class="story-content">
+        <div class="story-text">
+          <p>Matlala Farming began as a dream shared by our family - to create something meaningful that would nourish both our community and the land we call home. What started as a small plot in the rich soils of Gauteng has grown into a thriving farm that embodies our values of sustainability, quality, and genuine care.</p>
+          <p>Our journey hasn't always been easy, but it has always been driven by love. Love for the earth that sustains us, love for the animals in our care, and love for the people who trust us to provide them with wholesome, nutritious food.</p>
+        </div>
+        <div class="story-image">
+          [Family Farm Photo - Generations working together on the land]
+        </div>
+      </div>
+      <div class="story-content">
+        <div class="story-image">
+          [Historical Photo - Early days of the farm]
+        </div>
+        <div class="story-text">
+          <p>Through generations of farming wisdom passed down from our elders, we've learned that true success comes not from taking from the land, but from working with it. Our traditional methods, combined with modern sustainable practices, create a harmony that benefits everyone - from the soil microorganisms to the families who enjoy our fresh produce.</p>
+          <p>Today, Matlala Farming stands as a testament to what's possible when passion meets purpose. We're not just growing vegetables and raising chickens; we're nurturing a legacy that will feed our community for generations to come.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="values-section">
+      <h2>Our Core Values</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">🌍</div>
+          <h3>Environmental Stewardship</h3>
+          <p>We believe in farming practices that enhance rather than deplete our natural resources. Our methods improve soil health, conserve water, and support biodiversity for a sustainable future.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">❤️</div>
+          <h3>Community Care</h3>
+          <p>Our community is our extended family. We're committed to providing fresh, affordable, and nutritious food while supporting local economic growth and food security.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🌿</div>
+          <h3>Quality & Integrity</h3>
+          <p>Every vegetable we grow and every chicken we raise receives the same care and attention we'd give our own family's food. No shortcuts, no compromises - just honest, quality farming.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🤝</div>
+          <h3>Transparency</h3>
+          <p>We believe our customers have the right to know how their food is grown. We welcome visitors to our farm and are always happy to share our methods and philosophy.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="team-section">
+      <h2>The Matlala Family</h2>
+      <p class="team-intro">
+        Farming is a family affair at Matlala Farming. Each member of our family brings their unique skills, knowledge, and passion to ensure that everything we do reflects our commitment to excellence. From the youngest helping to collect eggs to our elders sharing decades of agricultural wisdom, everyone plays a vital role in our success.
+      </p>
+      <div class="family-values">
+        <div class="family-value">
+          <h4>Traditional Wisdom</h4>
+          <p>Our elders guide us with time-tested farming techniques that have sustained our community for generations.</p>
+        </div>
+        <div class="family-value">
+          <h4>Innovation & Learning</h4>
+          <p>Our younger generation brings fresh ideas and modern sustainable practices to enhance our traditional methods.</p>
+        </div>
+        <div class="family-value">
+          <h4>Shared Responsibility</h4>
+          <p>Every family member takes pride in their contribution to our farm's success and our community's well-being.</p>
+        </div>
+        <div class="family-value">
+          <h4>Future Focus</h4>
+          <p>We're not just farming for today - we're building a legacy that will nourish future generations.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="produce.html">Our Produce</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Matlala Farming. All rights reserved. | Limpopo, South Africa</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
