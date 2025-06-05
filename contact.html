@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Matlala Farming</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-green: #2d5016;
+      --accent-green: #4a7c59;
+      --light-green: #8fbc8f;
+      --warm-cream: #faf7f2;
+      --earth-brown: #8b4513;
+      --soft-gray: #6b7280;
+      --white: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--soft-gray);
+      background-color: var(--warm-cream);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%);
+      padding: 1rem 2rem;
+      position: relative;
+      box-shadow: 0 4px 20px var(--shadow);
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      background: var(--warm-cream);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--primary-green);
+      font-weight: bold;
+    }
+
+    .brand-text h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--white);
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .brand-text p {
+      color: var(--light-green);
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--white);
+      box-shadow: 0 2px 10px var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary-green);
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      background: var(--primary-green);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .nav-links a.active {
+      background: var(--light-green);
+      color: var(--white);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 200;
+      width: 40px;
+      height: 40px;
+      position: relative;
+    }
+
+    .hamburger, .hamburger::before, .hamburger::after {
+      content: '';
+      display: block;
+      background: var(--primary-green);
+      height: 4px;
+      border-radius: 2px;
+      width: 28px;
+      position: absolute;
+      left: 6px;
+      transition: all 0.3s;
+    }
+
+    .hamburger {
+      top: 18px;
+    }
+
+    .hamburger::before {
+      top: 8px;
+    }
+
+    .hamburger::after {
+      top: -8px;
+    }
+
+    /* Contact Hero Section */
+    .contact-hero {
+      background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .contact-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .contact-hero p {
+      font-size: 1.2rem;
+      color: var(--light-green);
+      max-width: 600px;
+      margin: 0 auto;
+      animation: fadeInUp 1s ease-out 0.3s both;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 5rem 2rem;
+      background: var(--white);
+    }
+
+    .contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      background: var(--warm-cream);
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px var(--shadow);
+    }
+
+    .contact-form h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-green);
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      color: var(--primary-green);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      background: var(--white);
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--accent-green);
+      box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .submit-btn {
+      background: var(--earth-brown);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+    }
+
+    .submit-btn:hover {
+      background: #a0522d;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(139, 69, 19, 0.4);
+    }
+
+    /* Contact Info */
+    .contact-info h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-green);
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+
+    .info-card {
+      background: var(--warm-cream);
+      padding: 2rem;
+      border-radius: 15px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 5px 15px var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px var(--shadow);
+    }
+
+    .info-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .info-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--accent-green), var(--light-green));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--white);
+    }
+
+    .info-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-green);
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .info-card p {
+      color: var(--soft-gray);
+      line-height: 1.6;
+    }
+
+    .info-card a {
+      color: var(--accent-green);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .info-card a:hover {
+      color: var(--primary-green);
+    }
+
+    /* Business Hours */
+    .hours-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .hours-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .hours-item:last-child {
+      border-bottom: none;
+    }
+
+    .day {
+      font-weight: 600;
+      color: var(--primary-green);
+    }
+
+    .time {
+      color: var(--soft-gray);
+    }
+
+    /* Map Section */
+    .map-section {
+      padding: 3rem 2rem;
+      background: var(--warm-cream);
+      text-align: center;
+    }
+
+    .map-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .map-container h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-green);
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+
+    
+
+    /* Footer */
+    footer {
+      background: var(--primary-green);
+      color: var(--white);
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--light-green);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--accent-green);
+      padding-top: 2rem;
+      color: var(--light-green);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--white);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        box-shadow: 0 8px 24px var(--shadow);
+        z-index: 150;
+        padding: 1rem 0;
+      }
+      
+      .nav-links.open {
+        display: flex;
+      }
+
+      .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .brand-text h1 {
+        font-size: 1.5rem;
+      }
+
+      .contact-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .contact-form,
+      .info-card {
+        padding: 2rem;
+      }
+
+      .hours-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .map-placeholder {
+        height: 300px;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contact-hero {
+        padding: 3rem 1rem;
+      }
+
+      .contact-hero h1 {
+        font-size: 2rem;
+      }
+
+      .contact-section {
+        padding: 3rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <nav>
+    <div class="nav-container">
+      <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="produce.html">Our Produce</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="contact-hero">
+    <h1>Get In Touch</h1>
+    <p>We'd love to hear from you! Whether you're interested in our fresh produce, have questions about our farming practices, or want to visit our farm, we're here to help.</p>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-container">
+      <div class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          
+          <div class="form-group">
+            <label for="inquiry">Inquiry Type</label>
+            <select id="inquiry" name="inquiry">
+              <option value="">Select an option</option>
+              <option value="general">General Information</option>
+              <option value="produce">Product Inquiry</option>
+              <option value="visit">Farm Visit</option>
+              <option value="wholesale">Wholesale Orders</option>
+              <option value="partnership">Partnership Opportunities</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" placeholder="Tell us how we can help you..." required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <h2>Contact Information</h2>
+        
+        <div class="info-card">
+          <div class="info-card-header">
+            <div class="info-icon">📍</div>
+            <h3>Visit Our Farm</h3>
+          </div>
+          <p>123 Farming Road<br>
+          Pretoria, Gauteng 0001<br>
+          South Africa</p>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-header">
+            <div class="info-icon">📞</div>
+            <h3>Call Us</h3>
+          </div>
+          <p><strong>Main Office:</strong> <a href="tel:+27123456789">+27 12 345 6789</a><br>
+          <strong>Mobile:</strong> <a href="tel:+27821234567">+27 82 123 4567</a></p>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-header">
+            <div class="info-icon">✉️</div>
+            <h3>Email Us</h3>
+          </div>
+          <p><strong>General:</strong> <a href="mailto:info@matlalafarming.co.za">info@matlalafarming.co.za</a><br>
+          <strong>Orders:</strong> <a href="mailto:orders@matlalafarming.co.za">orders@matlalafarming.co.za</a></p>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-header">
+            <div class="info-icon">🕒</div>
+            <h3>Business Hours</h3>
+          </div>
+          <div class="hours-grid">
+            <div class="hours-item">
+              <span class="day">Monday - Friday</span>
+              <span class="time">8:00 AM - 5:00 PM</span>
+            </div>
+            <div class="hours-item">
+              <span class="day">Saturday</span>
+              <span class="time">8:00 AM - 2:00 PM</span>
+            </div>
+            <div class="hours-item">
+              <span class="day">Sunday</span>
+              <span class="time">Closed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="map-section">
+    <div class="map-container">
+      <h2>Find Us</h2>
+      <div class="map-placeholder">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d929014.9168959267!2d27.4017!3d-26.2041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c68f0406a51%3A0x238ac9d9b1d34041!2sGauteng%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1699000000000!5m2!1sen!2sza"
+          width="600" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Matlala Farming Location - Gauteng, South Africa">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="about.html">About Us</a>
+        <a href="produce.html">Our Produce</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Matlala Farming. All rights reserved. | Gauteng, South Africa</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle.addEventListener('click', function () {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('open');
+    });
+
+    // Form submission handling
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(this);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const phone = formData.get('phone');
+      const inquiry = formData.get('inquiry');
+      const message = formData.get('message');
+      
+      // Simple validation
+      if (!name || !email || !message) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      
+      // Simulate form submission
+      const submitBtn = document.querySelector('.submit-btn');
+      const originalText = submitBtn.textContent;
+      
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+      
+      setTimeout(() => {
+        alert('Thank you for your message! We\'ll get back to you soon.');
+        this.reset();
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }, 2000);
+    });
+
+    // Add smooth scrolling for any anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
