@@ -91,8 +91,8 @@
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      justify-content: right;
+      align-items: right;
       padding: 1rem 2rem;
     }
 
@@ -466,6 +466,80 @@
         gap: 1rem;
       }
     }
+	
+	.founder-section {
+	font-family: 'Inter', sans-serif;
+  margin: 3rem 0 2.5rem 0;
+  padding: 2rem 1rem;
+  background: #f8f8f8;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+.founder-section h2 {
+font-family: 'Inter', sans-serif;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #3a5d23;
+  letter-spacing: 1px;
+}
+
+.founder-content {
+font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.founder-image img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #d9e7cb;
+  box-shadow: 0 2px 12px rgba(58,93,35,0.08);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.founder-bio {
+font-family: 'Inter', sans-serif;
+  max-width: 500px;
+}
+
+.founder-bio h3 {
+  margin-top: 0;
+  color: #3a5d23;
+  font-size: 1.5rem;
+}
+
+.founder-bio p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.founder-signature {
+  font-family: 'Dancing Script', cursive, sans-serif;
+  font-size: 1.2rem;
+  color: #7a9e5a;
+  margin-top: 1.2rem;
+}
+
+@media (max-width: 700px) {
+  .founder-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .founder-image img {
+    width: 160px;
+    height: 160px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -481,6 +555,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" class="active">About Us</a></li>
         <li><a href="produce.html">Our Produce</a></li>
+			 <li><a href="collaborations.html">Collaborations</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -513,6 +588,22 @@
         </div>
       </div>
     </section>
+	
+		<section class="founder-section">
+  <h2>Meet Our Founder</h2>
+  <div class="founder-content">
+    <div class="founder-image">
+      <img src="images/founder.jpg" alt="Founder: Lesego Matlala" id="founder-photo" />
+    </div>
+    <div class="founder-bio">
+      <h3>Lesego Matlala</h3>
+      <p>
+        “Matlala Farming is more than a business—it's a legacy of love, resilience, and respect for the earth.  Today, I am proud to carry forward my family's tradition, blending time-honored wisdom with modern sustainability. Thank you for being part of our story.”
+      </p>
+      <p class="founder-signature">— Lesego Matlala</p>
+    </div>
+  </div>
+</section>
 
     <section class="values-section">
       <h2>Our Core Values</h2>
@@ -535,6 +626,9 @@
         </div>
       </div>
     </section>
+	
+
+
 
     <section class="team-section">
       <h2>The Matlala way</h2>
@@ -565,12 +659,15 @@
   <footer>
     <div class="footer-content">
       <div class="footer-links">
-        <a href="index.html">Home</a>
+        	<a href ="index.html">Home</a>
+        <a href="about.html">About Us</a>
         <a href="produce.html">Our Produce</a>
+        <a href="collaborations.html">collaborations</a>
         <a href="contact.html">Contact</a>
+		
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Matlala Farming. All rights reserved. | Limpopo, South Africa</p>
+        <p>&copy; 2025 Matlala Farming. All rights reserved. | Gauteng, South Africa</p>
       </div>
     </div>
   </footer>
