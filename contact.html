@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+what email will a message be sent to from the following: <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -534,55 +534,47 @@
     <p>We'd love to hear from you! Whether you're interested in our fresh produce, have questions about our farming practices, or want to visit our farm, we're here to help.</p>
   </section>
 
-
-	<section class="contact-section">
-  <div class="contact-container">
-    <div class="contact-form">
-      <h2>Send Us a Message</h2>
-      <form id="contactForm" action="sendmail.php" method="POST">
-        <div class="form-group">
-          <label for="name">Full Name *</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="email">Email Address *</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone">
-        </div>
-        
-        <div class="form-group">
-          <label for="inquiry">Inquiry Type</label>
-          <select id="inquiry" name="inquiry">
-            <option value="">Select an option</option>
-            <option value="general">General Information</option>
-            <option value="produce">Product Inquiry</option>
-            <option value="visit">Farm Visit</option>
-            <option value="wholesale">Wholesale Orders</option>
-            <option value="partnership">Partnership Opportunities</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <label for="message">Message *</label>
-          <textarea id="message" name="message" placeholder="Tell us how we can help you..." required></textarea>
-        </div>
-        
-        <button type="submit" class="submit-btn">Send Message</button>
-      </form>
-
-      <p id="form-status" class="form-status" style="display:none; color:green; margin-top:15px;">
-        ✅ Thank you for your message! We'll get back to you soon.
-      </p>
-    </div>
-  </div>
-</section>
-  
+  <section class="contact-section">
+    <div class="contact-container">
+      <div class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          
+          <div class="form-group">
+            <label for="inquiry">Inquiry Type</label>
+            <select id="inquiry" name="inquiry">
+              <option value="">Select an option</option>
+              <option value="general">General Information</option>
+              <option value="produce">Product Inquiry</option>
+              <option value="visit">Farm Visit</option>
+              <option value="wholesale">Wholesale Orders</option>
+              <option value="partnership">Partnership Opportunities</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" placeholder="Tell us how we can help you..." required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
 
       <div class="contact-info">
         <h2>Contact Information</h2>
@@ -645,7 +637,7 @@
     <div class="map-container">
       <h2>📍Location</h2>
       <div class="map-placeholder">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d34168.598181233094!2d28.73936199383369!3d-25.819027113198594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1eeab287cfbe2fa3%3A0x51044edbf66e6a3!2sBronkhorstspruit!5e0!3m2!1sen!2sza!4v1755607088306!5m2!1sen!2sza" width="300" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d34168.598181233094!2d28.73936199383369!3d-25.819027113198594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1eeab287cfbe2fa3%3A0x51044edbf66e6a3!2sBronkhorstspruit!5e0!3m2!1sen!2sza!4v1755607088306!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
       </div>
     </div>
   </section>
@@ -722,26 +714,7 @@
         }
       });
     });
-	  document.getElementById('contactForm').addEventListener('submit', async function (e) {
-  e.preventDefault();
-  const form = this;
-  const formData = new FormData(form);
-
-  const response = await fetch(form.action, {
-    method: 'POST',
-    body: formData
-  });
-
-  if (response.ok) {
-    form.reset();
-    document.getElementById('form-status').classList.remove('hidden');
-  } else {
-    alert('There was an error sending your message. Please try again.');
-  }
-});
   </script>
 </body>
 </html>
-
-
 
